@@ -29,7 +29,7 @@ public class TrainUserImpl implements TrainUser {
 	}
 
 	public boolean isThisAwesome(){
-		return false;
+		return true       ; //van itt valami valtozas :O
 	}
 
 }
