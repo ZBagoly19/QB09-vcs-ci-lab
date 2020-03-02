@@ -29,7 +29,7 @@ public class TrainUserImpl implements TrainUser {
 	}
 
 	public boolean isThisAwesome(){
-		return true;
+		return false;
 	}
 
 }
