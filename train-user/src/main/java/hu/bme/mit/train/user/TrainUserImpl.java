@@ -20,7 +20,7 @@ public class TrainUserImpl implements TrainUser {
 
 	public TrainUserImpl(TrainController controller) {
 		this.controller = controller;
-		updateTimer.schedule(updateTask, 0, 500);
+		updateTimer.schedule(updateTask, 0, 1000);
 	}
 
 	private void sendStickPositionToController() {
