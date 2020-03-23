@@ -2,14 +2,29 @@ package hu.bme.mit.train.user;
 
 import hu.bme.mit.train.interfaces.TrainController;
 import hu.bme.mit.train.interfaces.TrainUser;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TrainUserImpl implements TrainUser {
 
 	private TrainController controller;
 	private int joystickPosition;
 
+	Timer updateTimer = new Timer();
+	private TimerTask updateTask = new TimerTask() {
+		@Override
+		public void run() {
+			sendStickPositionToController();
+		}
+	};
+
 	public TrainUserImpl(TrainController controller) {
 		this.controller = controller;
+		updateTimer.schedule(updateTask, 0, 500);
+	}
+
+	private void sendStickPositionToController() {
+		controller.setJoystickPosition(joystickPosition);
 	}
 
 	@Override
