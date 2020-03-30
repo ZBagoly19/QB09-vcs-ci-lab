@@ -1,22 +1,30 @@
 package hu.bme.mit.train.sensor;
 
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
+import java.util.List;
+
+import com.sun.javafx.geom.Vec3f;
 
 public class Tachograph {
 
-    private Table<Integer, Integer, Integer> tachoData;
+	private List<Vec3f> tachoDatas;
 
     public Tachograph() {
-        tachoData = HashBasedTable.create();
+
     }
 
     public void addDataElement(Integer time, Integer position, Integer refSpeed) {
-        tachoData.put(time, position, refSpeed);
+    	Vec3f v3 = new Vec3f(time.floatValue(), position.floatValue(), refSpeed.floatValue());
+        tachoDatas.add(v3);
     }
 
     public int getElement(Integer time, Integer pos) {
-        Integer speed = tachoData.get(time, pos);
-        return speed;
+        Float speed = null;
+        for(int i = 0; i < tachoDatas.size(); i++) {
+        	if(time == tachoDatas.get(i).x) {
+        		if(pos == tachoDatas.get(i).y)
+        			speed = tachoDatas.get(i).z;
+        	}
+        }
+        return speed.intValue();
     }
 }

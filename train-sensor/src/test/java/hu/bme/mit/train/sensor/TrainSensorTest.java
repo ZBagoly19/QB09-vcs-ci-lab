@@ -1,13 +1,11 @@
 package hu.bme.mit.train.sensor;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
-import java.util.Optional;
+
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
 
 public class TrainSensorTest {
 
