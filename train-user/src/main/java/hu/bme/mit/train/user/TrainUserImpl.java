@@ -14,7 +14,7 @@ public class TrainUserImpl implements TrainUser {
 		public void run() {
 			sendStickPositionToController();
 		}
-
+ 
 		private void sendStickPositionToController() {
 			controller.setJoystickPosition(joystickPosition);
 		}
