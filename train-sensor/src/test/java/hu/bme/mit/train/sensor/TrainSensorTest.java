@@ -9,7 +9,7 @@ import java.util.Optional;
 import static org.junit.Assert.assertEquals;
 
 public class TrainSensorTest {
-
+ 
     private Tachograph tachograph;
 
     @Before
