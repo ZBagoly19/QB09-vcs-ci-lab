@@ -2,7 +2,7 @@ package hu.bme.mit.train.sensor;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
- 
+  
 public class Tachograph {
 
     private Table<Integer, Integer, Integer> tachoData;
